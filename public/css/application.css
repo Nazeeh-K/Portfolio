@@ -248,14 +248,16 @@ input[type="checkbox"] {
     left: 31%;
 }
 #todo-title{
-    justify-self: center;
+    /* justify-self: center; */
     font-size: 5rem;
+    display: grid;
+    justify-content: center;
 }
 .todo-item {
     border: 1px solid var(--main-color);
     font-size: 2rem;
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-grid;
+    /* flex-wrap: wrap; */
     align-items: center;
     border-radius: 0.5rem;
     gap: 5px;
