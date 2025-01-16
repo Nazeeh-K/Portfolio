@@ -1,0 +1,62 @@
+<%- include("partials/header") -%>
+
+<header class="header">
+    <a href="#home" class="logo"> Nazeeh <span>Khalifa</span></a>
+
+    <i class="bx bx-menu" id="menu-icon"></i>
+
+    <nav class="navbar">
+        <a href="/">Portfolio</a>
+    </nav>
+</header>
+
+<section class="home">
+    <div class="header-darkswitch">
+        <button id="theme-switch">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"/></svg>                
+        </button>
+    </div>
+    <div class="home-welcome">
+
+        <h1 id="t-margin">Hello <span>There!</span></h1>
+        <h3>Here <span>is the <h1 style="border-bottom: 2px solid white">ToDo List</h1></span></h3>
+        <p>You can add new items, remove new items, and will repopulate to the default; if all the items were deleted.</p>
+        <p><span>Enjoy</span></p>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2 id="todo-title"><span><%= listTitle %></span></h2>
+    <div class="" >
+        <% foundListItem.forEach((item) => { %>
+            <form action="/delete" method="post">
+                <div class="todo-item" >
+                    <input type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()">
+                    <p><%=item.name%></p>
+                </div>
+                <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+            </form>
+
+        <% }) %>
+    </div>
+        
+
+        <form class="ttodo-item" action="/todo" method="post" style="border: 0;">
+            <div class="input-group">
+                <div class="input-box" id="todo-btns">
+                    <input  type="text" name="newItem" style="width: 40%; height: 80px;"
+                     placeholder="New Item" autocomplete="off">
+                     <button type="submit" style="margin-left: 1rem;"
+            class="btn" name="list" value=<%= listTitle %>>+</button>
+                </div>
+            </div>
+            
+            <div class="input-group-2">
+                
+            </div>
+            
+            
+        </form>
+</section>
+    <%- include("partials/footer") -%>
