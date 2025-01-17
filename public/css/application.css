@@ -266,11 +266,18 @@ input[type="checkbox"] {
     justify-content: center;
     justify-self: center;
 }
+/* scrollbar */
 ::-webkit-scrollbar {
-    margin: 4rem 0;
+    margin: 3rem 0;
+    width: 10px;
+    height: 100%;
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--main-color);
+    border-radius: 1rem;
+}
+::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
 }
 ::-webkit-scrollbar-track {
     background-color: var(--bg-color);
